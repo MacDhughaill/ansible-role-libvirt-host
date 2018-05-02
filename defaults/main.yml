@@ -1,0 +1,17 @@
+---
+# This is an example of the structure this variable needs.
+# The name can be anything, but spaces are not recommended. Short and descriptive works best.
+# The various type of libvirt storage pools are detailed in the link below.
+# https://libvirt.org/storage.html
+# Both sub-items are fed to a libvirt formatted xml template.
+# The template at the moment only supports adding a previously existing LVM volume group.
+# It will be extended with more storage pool types as needed in the future.
+libvirt_host_storage_pools:
+  - name: orange
+    type: logical
+  - name: strawberry
+    type: dir
+  - name: watermelon
+    type: fs
+  - name: blueberry
+    type: disk

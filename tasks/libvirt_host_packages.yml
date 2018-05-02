@@ -1,0 +1,15 @@
+---
+# Consult defaults/main.yml to learn about the role variables.
+- block:
+  - name: Install libvirt packages on Red Hat Linux using Yum
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - libvirt
+      - libvirt-python
+      - qemu-kvm
+    when:
+      - ansible_os_family == "RedHat"
+      - ansible_pkg_mgr == "yum"
+  become: true

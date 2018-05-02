@@ -1,0 +1,5 @@
+---
+- name: Install libvirt host packages
+  import_tasks: libvirt_host_packages.yml
+- name: Configure libvirt host
+  import_tasks: libvirt_host.yml
