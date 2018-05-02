@@ -1,0 +1,5 @@
+---
+libvirt_host_CentOS_packages:
+  - libvirt
+  - libvirt-python
+  - qemu-kvm
