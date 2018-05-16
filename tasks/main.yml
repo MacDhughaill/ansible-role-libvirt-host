@@ -2,7 +2,7 @@
 - include_tasks: "libvirt_host_{{ ansible_distribution }}_tasks.yml"
 
 - block:
-  - name: Start and enable the libvirt daemon
+  - name: Start and enable the libvirt service
     systemd:
       name: libvirtd
       enabled: true
@@ -10,10 +10,10 @@
 
 # The only users that can access the all powerful `:///system` URI are root and any members of the libvirt group.
 # Since good practice says to disable root login over SSH, remote usage of this URI requires adding a user to that group.
-  - name: Enable user account access to libvirt daemon
+  - name: Enable user account access to libvirt service
     user:
       name: "{{ item }}"
       append: true
       groups: libvirt
-    with_items: "{{ libvirt_host_daemon_users }}"
+    with_items: "{{ libvirt_host_service_users }}"
   become: true
