@@ -2,4 +2,5 @@
 libvirt_host_CentOS_packages:
   - libvirt
   - libvirt-python
+  - python-lxml
   - qemu-kvm
